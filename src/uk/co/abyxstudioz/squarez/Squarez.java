@@ -10,7 +10,6 @@ public class Squarez {
 	public static final String version = "0.5";
 	
 	public static void main(String args[]){
-		
    		frame.setSize(720, 480);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
