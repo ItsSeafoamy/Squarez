@@ -6,9 +6,12 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.math.BigInteger;
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 public class Listener implements KeyListener {
+
+	Random random = new Random();
 
 	public Listener(){
 		Squarez.frame.addKeyListener(this);
@@ -65,7 +68,10 @@ public class Listener implements KeyListener {
 						pos--;
 					}
 				}
-				Squarez.frame.setTitle(Squarez.title + " - " + Squarez.version + " - " + Game.i + "x" + Game.j);
+				
+				Squarez.splash = Squarez.splashes.get(random.nextInt(Squarez.splashes.size()));
+				Squarez.frame.setTitle(Squarez.title + " - " + Squarez.version + " - " + Game.i + "x" + Game.j + " - " + Squarez.splash);
+				
 				JOptionPane.showMessageDialog(null, "The game was successfully loaded, however, the code you provided is for V0.4. It is highly recommended that you save the game and obtain the V0.5 code.", "Squarez", JOptionPane.INFORMATION_MESSAGE);
 			} else {
 				try {
@@ -91,7 +97,9 @@ public class Listener implements KeyListener {
 							pos++;
 						}
 					}
-					Squarez.frame.setTitle(Squarez.title + " - " + Squarez.version + " - " + Game.i + "x" + Game.j);
+					Squarez.splash = Squarez.splashes.get(random.nextInt(Squarez.splashes.size()));
+					Squarez.frame.setTitle(Squarez.title + " - " + Squarez.version + " - " + Game.i + "x" + Game.j + " - " + Squarez.splash);
+					
 					JOptionPane.showMessageDialog(null, "Loaded Game.", "Squarez", JOptionPane.INFORMATION_MESSAGE);
 				} catch (Exception ex){
 					JOptionPane.showMessageDialog(null, "Error: Invalid Code.", "Squarez", JOptionPane.ERROR_MESSAGE);
