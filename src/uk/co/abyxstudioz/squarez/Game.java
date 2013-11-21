@@ -19,9 +19,6 @@ public class Game extends JPanel {
 	public static int i = 2;
 	public static int j = 2;
 	
-	public static int cameraX;
-	public static int cameraY;
-	
 	static final Character character = new Character();
 	
 	@Override
@@ -42,9 +39,6 @@ public class Game extends JPanel {
 		
 		g.setColor(Color.WHITE);
 		g.fillRect(0, 0, Squarez.frame.getWidth(), Squarez.frame.getHeight());
-		
-		cameraX = character.getPosX();
-		cameraY = character.getPosY();
 		
 		for (int x = 0; x < i; x++){
 			for (int y = 0; y < j; y++){
